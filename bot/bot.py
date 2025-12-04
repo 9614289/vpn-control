@@ -530,9 +530,9 @@ async def cb_proto(call: CallbackQuery, callback_data: MenuCb):
     """
     Экран 'Инструкция → Устройство → Протокол'.
     Назад → в экран устройства (список протоколов).
-    target в формате "device:proto".
+    target в формате "device|proto".
     """
-    if not callback_data.target or ":" not in callback_data.target:
+    if not callback_data.target or "|" not in callback_data.target:
         await call.answer("Некорректные данные", show_alert=True)
         return
 
